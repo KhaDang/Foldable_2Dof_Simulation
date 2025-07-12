@@ -12,6 +12,14 @@ struct PlatformParams {
     float l;
 };
 
+struct StepperMotor {
+    int stepPin;
+    int dirPin;
+    int stepsPerRev;     // e.g. 800 for 1.8° motor with 1/4 microstepping
+    float currentAngle;  // tracked in degrees
+};
+
+
 // Compute motor angle α given platform angle θ (radians)
 float computeMotorAngle(float theta, const PlatformParams &params);
 
